@@ -7,16 +7,12 @@
             <h1><a href="/">Money Pig</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Expense1</a></h2>
-            <p>Тарталетки</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Expense2</a></h2>
-            <p>Гараж</p>
-        </div>
+        {% for bill in bills %}
+            <div>
+                <p>created: {{ bill.created_date }}</p>
+                <h1><a href="">{{ bill.title }}</a></h1>
+                <p>{{ bill.summa }} руб.</p>
+            </div>
+        {% endfor %}
     </body>
 </html>

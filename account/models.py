@@ -7,7 +7,7 @@ class Bill(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     place = models.CharField(max_length=150)
-    summa = models.IntegerField()
+    summa = models.FloatField()
     created_date = models.DateTimeField(default=timezone.now)
 
     def publish(self):
@@ -21,7 +21,7 @@ class Position(models.Model):
     bill_id = models.ForeignKey(Bill, on_delete=models.CASCADE)
     name = models.CharField(max_length=150)
     category = models.CharField(max_length=50)
-    summa = models.IntegerField()
+    summa = models.FloatField()
     amount = models.FloatField()
     measure = models.CharField(max_length=1)
     created_date = models.DateTimeField(default=timezone.now)
