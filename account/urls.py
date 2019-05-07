@@ -1,6 +1,12 @@
 from django.urls import path
 from . import views
+from django.contrib.auth.views import (LoginView,
+                                       LogoutView,
+                                       PasswordChangeView,
+                                       PasswordChangeDoneView)
+
 
 urlpatterns = [
-    path('', views.expenses_list, name='expenses_list'),
+    path('', views.ListExpensesView.as_view(), name='expenses-list'),
+    path('login/', LoginView.as_view(redirect_authenticated_user=True), name='login'),
 ]
