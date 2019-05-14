@@ -1,9 +1,7 @@
-<html>
-    <head>
-        <title>Money Pig</title>
-    </head>
-    <body>
-        <div>
+{% extends 'layouts/base.html' %}
+
+{% block body_block %}
+    <div>
             <h1><a href="/">Money Pig</a></h1>
         </div>
         <a href="{% url 'logout' %}">Logout </a>
@@ -27,5 +25,4 @@
                 {% endfor %}
             </div>
         {% endfor %}
-    </body>
-</html>
+{% endblock %}
