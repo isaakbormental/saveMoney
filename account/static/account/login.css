@@ -1,0 +1,26 @@
+label[for="id_username"]{
+    color: #ffffff;
+}
+
+label[for="id_password"]{
+    color: #ffffff;
+    align-self: center;
+}
+body{
+    background: #6a2c93;
+}
+
+.btn.btn-primary{
+    background-color:#6a2c93;
+    color: white;
+    border-color: white;
+}
+
+.btn.btn-primary:hover{
+    background-color:white;
+    color:#6a2c93;
+}
+.btn.btn-primary:active:focus{
+    background-color:white;
+    color:#6a2c93;
+}
