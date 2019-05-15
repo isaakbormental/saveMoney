@@ -12,6 +12,7 @@ class AggregateExpense:
 class DayAggregate:
     def __init__(self, date):
         self.date = date
+        self.total = 0.0
         self.expenses = []
         # self.day_expenses = Bill.objects.filter(created_date=date).order_by('created_date')
 
@@ -30,9 +31,11 @@ class Aggregator:
                 viewed_dates.add(obj.created_date.date())
                 new_expense = DayAggregate(obj.created_date.date())
                 new_expense.put_expense(obj)
+                new_expense.total += obj.summa
                 aggregate_result.append(new_expense)
             else:
                 aggregate_result[-1].put_expense(obj)
+                aggregate_result[-1].total += obj.summa
         print(viewed_dates)
         print(aggregate_result)
         return aggregate_result

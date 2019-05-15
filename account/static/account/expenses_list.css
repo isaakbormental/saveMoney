@@ -20,6 +20,15 @@ hr {
     padding: 10px;
     margin-left: 0;
     color: white;
+    display: inline-block;
+
+}
+
+.expenses-aggregate-total {
+    padding: 10px;
+    float: right;
+    color: white;
+    display: inline-block;
 
 }
 
