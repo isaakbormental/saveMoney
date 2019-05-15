@@ -1,26 +1,58 @@
 label[for="id_username"]{
     color: #ffffff;
+    vertical-align: middle;
 }
 
 label[for="id_password"]{
     color: #ffffff;
-    align-self: center;
+    vertical-align: middle;
+    margin-top: 20px;
 }
 body{
     background: #6a2c93;
 }
 
-.btn.btn-primary{
+div{
+    text-align: center;
+}
+
+#id_username{
+    width: 300px;
+    height: 40px;
+    border-radius: 15px;
+    outline:0;
+    border-width: 0;
+    text-align: center;
+}
+
+#id_password{
+    width: 300px;
+    height: 40px;
+    border-radius: 15px;
+    outline:0;
+    border-width: 0;
+    text-align: center;
+}
+
+.buttn-login{
+    margin-top: 40px;
     background-color:#6a2c93;
     color: white;
     border-color: white;
+    border-radius: 25px;
+    border: 2px solid;
+    border-color: white;
+    padding: 10px 60px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.btn.btn-primary:hover{
+.buttn-login:hover{
     background-color:white;
     color:#6a2c93;
 }
-.btn.btn-primary:active:focus{
-    background-color:white;
-    color:#6a2c93;
+.buttn-login:active:focus{
+    background-color:#6a2c93;
+    color:white;
+    outline:0;
 }

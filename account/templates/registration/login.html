@@ -12,8 +12,23 @@
             <div class="col-4">
                 <form method="post" action="{% url 'login' %}">
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" id="sendlogin" class="btn btn-primary">login</button>
+                    <div>
+                        {{ form.username.label_tag }}
+                    </div>
+                    <div>
+                        {{ form.username }}
+                    </div>
+
+                    <div>
+                        {{ form.password.label_tag }}
+                    </div>
+                    <div>
+                        {{ form.password }}
+                    </div>
+
+{#                    {{ form.as_p }}#}
+{#                    <button type="submit" id="sendlogin" class="btn btn-primary">login</button>#}
+                    <button type="submit" id="sendlogin" class="buttn-login">login</button>
                     {% if form.errors %}
                         <p>Your username and password didn't match. Please try again.</p>
                     {% endif %}
