@@ -1,32 +1,39 @@
 {% extends 'layouts/base.html' %}
 
 {% block body_block %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'account/expenses_list.css' %}" type="text/css">
     <div class="container">
+        <a href="{% url 'index' %}">
+            <img src="../../static/images/vectorpaint-purple.svg" alt="Plus" class="plus">
+        </a>
 
-            <div class="expenses-content">
-                {% for aggr in day_aggregates %}
-                    <div class="expenses-aggregate">
-                        <div class="expenses-aggregate-date-card">
-                            <div class="expenses-aggregate-date">{{ aggr.date }}</div>
-                        </div>
-
-                        {% for expense in aggr.expenses %}
-                            <div class="expense-item">
-                                <div class="expense-item-sum">{{ expense.summa }} руб.</div>
-                                <div class="expense-item-title">{{ expense.title }}</div>
-
-                                <div class="expense-item-place">{{ expense.place }}</div>
-                            </div>
-                            {% if  not forloop.last %}
-                                <hr/>
-                            {% endif %}
-
-                        {% endfor %}
+        <div class="expenses-content">
+            {% for aggr in day_aggregates %}
+                <div class="expenses-aggregate">
+                    <div class="expenses-aggregate-date-card">
+                        <div class="expenses-aggregate-date">{{ aggr.date }}</div>
                     </div>
-                {% endfor %}
-            </div>
+
+                    {% for expense in aggr.expenses %}
+                        <div class="expense-item">
+                            <div class="expense-item-sum">{{ expense.summa }} руб.</div>
+                            <div class="expense-item-title">{{ expense.title }}</div>
+
+                            <div class="expense-item-place">{{ expense.place }}</div>
+                        </div>
+                        {% if  not forloop.last %}
+                            <hr/>
+                        {% endif %}
+
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
 
     </div>
+
+
 {% endblock %}
