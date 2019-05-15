@@ -18,7 +18,10 @@
                                 <div>{{ expense.summa }} </div>
                                 <div>{{ expense.place }}</div>
                             </div>
-                            <hr/>
+                            {% if  not forloop.last %}
+                                <hr/>
+                            {% endif %}
+
                         {% endfor %}
                     </div>
                 {% endfor %}
