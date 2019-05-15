@@ -1,28 +1,13 @@
 {% extends 'layouts/base.html' %}
 
 {% block body_block %}
-    <div>
-            <h1><a href="/">Money Pig</a></h1>
-        </div>
-        <a href="{% url 'logout' %}">Logout </a>
-
+    <table id="expenses-table">
         {% for bill in bills %}
-            <div>
-                <p>created: {{ bill.bill.created_date }}</p>
-                <h1><a href="">{{ bill.bill.title }}</a></h1>
-                <p>{{ bill.bill.summa }} руб.</p>
-                {% for position in bill.positions %}
-                    <p>{{ position.count }}. {{ position.name }}</p>
-                    <p>Категория: {{ position.category }}</p>
-                    <p>Стоимость: {{ position.summa }} руб.</p>
-                    <p>Количество: {{ position.amount }}
-                        {% if position.measure == 'p'%}
-                            шт.
-                        {% elif position.measure == 'g' %}
-                            гр.
-                        {% endif %}
-                    </p>
-                {% endfor %}
-            </div>
-        {% endfor %}
+        <div id="expense-item">
+            <h1><a href="">{{ bill.bill.title }}</a></h1>
+            <p>{{ bill.bill.created_date }}</p>
+            <p>{{ bill.bill.summa }} руб.</p>
+        </div>
+    {% endfor %}
+    </table>
 {% endblock %}
