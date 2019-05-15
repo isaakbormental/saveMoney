@@ -14,9 +14,10 @@
 
                         {% for expense in aggr.expenses %}
                             <div class="expense-item">
-                                <div>{{ expense.title }}</div>
-                                <div>{{ expense.summa }} </div>
-                                <div>{{ expense.place }}</div>
+                                <div class="expense-item-sum">{{ expense.summa }} руб.</div>
+                                <div class="expense-item-title">{{ expense.title }}</div>
+
+                                <div class="expense-item-place">{{ expense.place }}</div>
                             </div>
                             {% if  not forloop.last %}
                                 <hr/>
