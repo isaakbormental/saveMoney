@@ -7,7 +7,8 @@ from django.contrib.auth.views import (LoginView,
 
 
 urlpatterns = [
-    path('', views.ListExpensesView.as_view(), name='expenses-list'),
+    path('', views.ListExpensesView.as_view(), name='index'),
+    path('expenses/', views.ListExpensesView.as_view(), name='expenses-list'),
     path('login/', LoginView.as_view(redirect_authenticated_user=True), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
 ]
