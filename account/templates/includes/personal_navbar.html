@@ -1,8 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6a2c93;">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <a class="navbar-brand" href="/">
         {% load static %}
     </a>
-
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" type="text/css">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,15 +13,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'index' %}" role="button">Home</a>
+                <a class="nav-link-custom" href="{% url 'index' %}" role="button">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-custom" href="{% url 'expenses-list' %}" role="button">Expenses</a>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'expenses-list' %}" role="button">Expenses</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="incomes/">Incomes</a>
+                <a class="nav-link-custom" href="incomes/">Incomes</a>
             </li>
             <li class="nav-item">
 {#                <a class="nav-link" href="{% url 'human-resources' %}">HR</a>#}
@@ -27,7 +28,11 @@
         </ul>
         {% if user.is_authenticated %}
         <div class="nav-item my-2 my-lg-0">
-            <a class="btn btn-outline-light btn-sm my-2 my-sm-0" href="{% url 'logout' %}">Logout </a>
+{#            <a class="btn btn-outline-light btn-sm my-2 my-sm-0" href="{% url 'logout' %}">Logout </a>#}
+            <a href="{% url 'logout' %}">
+                <i class="fas fa-power-off" style="font-size:24px;color:white; margin: 0; padding: 5px"></i>
+            </a>
+
         </div>
         {% endif %}
     </div>
