@@ -1,13 +1,28 @@
 {% extends 'layouts/base.html' %}
 
 {% block body_block %}
-    <table id="expenses-table">
-        {% for bill in bills %}
-        <div id="expense-item">
-            <h1><a href="">{{ bill.bill.title }}</a></h1>
-            <p>{{ bill.bill.created_date }}</p>
-            <p>{{ bill.bill.summa }} руб.</p>
-        </div>
-    {% endfor %}
-    </table>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'account/expenses_list.css' %}" type="text/css">
+    <div class="container">
+
+            <div class="expenses-content">
+                {% for aggr in day_aggregates %}
+                    <div class="expenses-aggregate">
+                        <div class="expenses-aggregate-date-card">
+                            <div class="expenses-aggregate-date">{{ aggr.date }}</div>
+                        </div>
+
+                        {% for expense in aggr.expenses %}
+                            <div class="expense-item">
+                                <div>{{ expense.title }}</div>
+                                <div>{{ expense.summa }} </div>
+                                <div>{{ expense.place }}</div>
+                            </div>
+                            <hr/>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+
+    </div>
 {% endblock %}

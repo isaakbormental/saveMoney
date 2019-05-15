@@ -16,6 +16,7 @@ class Bill(models.Model):
     # def __str__(self):
     #     return self.title
 
+
 class Position(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     bill_id = models.ForeignKey(Bill, on_delete=models.CASCADE)

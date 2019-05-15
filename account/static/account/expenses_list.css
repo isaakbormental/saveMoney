@@ -1,0 +1,28 @@
+hr {
+    margin: 10px;
+}
+
+.expenses-content{
+    margin: auto;
+}
+
+.expenses-aggregate{
+    background-color: whitesmoke;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.expenses-aggregate-date{
+    padding: 10px;
+    margin-left: 0;
+    color: white;
+
+}
+
+.expenses-aggregate-date-card{
+    background-color: #6a2c93;
+    width: 100%;
+
+}
