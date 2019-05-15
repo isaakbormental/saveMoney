@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+
+{% block body_block %}
+
+{#    {% load static %}#}
+{#    <link rel="stylesheet" href="{% static 'account/expenses_list.css' %}" type="text/css">#}
+    <div class="container">
+
+        <div class="row justify-content-center align-items-center" style="height:100vh">
+            <div class="col-4">
+                <form method="post" action="{% url 'expenses-create' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="buttn-expenses-create">Create</button>
+                    {% if form.errors %}
+                        <p>Please try again.</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
