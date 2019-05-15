@@ -12,7 +12,7 @@ class ListExpensesView(LoginRequiredMixin, View):
     template_name = 'account/expenses_list.html'
 
     def get(self, request):
-        bills = Bill.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
+        bills = Bill.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
         print(type(bills))
         print(bills)
         aggregate = Aggregator.aggregate_expenses_by_date(bills)
