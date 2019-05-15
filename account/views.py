@@ -44,29 +44,20 @@ class ExpenseCreateView(LoginRequiredMixin, View):
     """Controller for creating Candidate"""
     model = Bill
     template_name = 'account/expenses/create.html'
-    # form_class = CandidateForm
+    form_class = ExpenseForm
     success_url = reverse_lazy('expenses-list')
 
     def get(self, request, **kwargs):
         context = dict()
         context['form'] = ExpenseForm()
-        # context['tags'] = CandidateTag.objects.all()
-        # context['vacancy_list'] = Vacancy.objects.all()
         return render(request, self.template_name, context)
 
     def post(self, request, **kwargs):
         form = ExpenseForm(request.POST)
-        print('post')
         if form.is_valid():
-            print('Valid')
-            expense = form.save()
-
-            print(expense)
-            # if candidate append to vacancy:
-            # candidate_card = ExpenseForm(author=request.user.id, created_date=timezone.now())
-            # candidate_card.save()
-            # tags_id = request.POST.getlist('tags')
-            # candidate.add_tags(tags_id)
+            expense = form.save(commit=False)
+            expense.author = request.user
+            expense.save()
             return HttpResponseRedirect(self.success_url)
         else:
             context = {'form': form}

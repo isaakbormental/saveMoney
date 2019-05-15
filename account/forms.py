@@ -9,7 +9,7 @@ class ExpenseForm(forms.ModelForm):
     class Meta:
         model = Bill
         fields = '__all__'
-        # exclude = ['hr', 'cv']
+        exclude = ['author', 'cv']
         # widgets = {
         #     'cv_text': forms.Textarea(attrs={'rows': 6}),
         #     'description': forms.Textarea(attrs={'rows': 6}),
