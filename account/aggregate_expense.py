@@ -26,16 +26,13 @@ class Aggregator:
         viewed_dates = set()
         aggregate_result = []
         for obj in expenses:
-            print(obj.created_date.date())
-            if obj.created_date.date() not in viewed_dates:
-                viewed_dates.add(obj.created_date.date())
-                new_expense = DayAggregate(obj.created_date.date())
+            if obj.created_date not in viewed_dates:
+                viewed_dates.add(obj.created_date)
+                new_expense = DayAggregate(obj.created_date)
                 new_expense.put_expense(obj)
                 new_expense.total += obj.summa
                 aggregate_result.append(new_expense)
             else:
                 aggregate_result[-1].put_expense(obj)
                 aggregate_result[-1].total += obj.summa
-        print(viewed_dates)
-        print(aggregate_result)
         return aggregate_result

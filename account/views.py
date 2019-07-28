@@ -16,14 +16,8 @@ class ListExpensesView(LoginRequiredMixin, View):
 
     def get(self, request):
         bills = Bill.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
-        print(type(bills))
-        print(bills)
         aggregate = Aggregator.aggregate_expenses_by_date(bills)
-
-        # aggregate = []
         context = {'day_aggregates': aggregate}
-        # for bill in bills:
-        #     aggregate.append(AggregateExpense(bill))
         return render(request, self.template_name, context)
 
 
