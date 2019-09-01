@@ -57,3 +57,12 @@ class ExpenseCreateView(LoginRequiredMixin, View):
             context = {'form': form}
             form.add_error(None, 'The form is incorrect')
             return render(request, self.template_name, context)
+
+
+class StatsView(LoginRequiredMixin, View):
+    """Controller for stats circle"""
+    template_name = 'account/stats_circle.html'
+    
+    def get(self, request, **kwargs):
+        context = dict()
+        return render(request, self.template_name, context)

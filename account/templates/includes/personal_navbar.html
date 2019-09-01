@@ -13,17 +13,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link-custom" href="{% url 'index' %}" role="button">Home</a>
+                <a class="nav-link-custom" href="{% url 'index' %}" role="button">home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link-custom" href="{% url 'expenses-list' %}" role="button">Expenses</a>
+                <a class="nav-link-custom" href="{% url 'expenses-list' %}" role="button">expense</a>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link-custom" href="incomes/">Incomes</a>
+                <a class="nav-link-custom" href="/incomes/">income</a>
             </li>
             <li class="nav-item">
-{#                <a class="nav-link" href="{% url 'human-resources' %}">HR</a>#}
+                <a class="nav-link-custom" href="/stats/">stats</a>
             </li>
         </ul>
         {% if user.is_authenticated %}
