@@ -6,8 +6,9 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'account/expenses_list.css' %}" type="text/css">
     <div class="container">
-        <a href="{% url 'expenses-create' %}">
-            <img src="../../static/images/vectorpaint-purple.svg" alt="Plus" class="plus">
+        <a href="{% url 'expenses-create' %}" class="plus">
+            <!-- <img src="../../static/images/vectorpaint-purple.svg" alt="Plus" class="plus"> -->
+            +
         </a>
 
         <div class="expenses-content">
@@ -25,9 +26,9 @@
 
                             <div class="expense-item-place">{{ expense.place }}</div>
                         </div>
-                        {% if  not forloop.last %}
-                            <hr/>
-                        {% endif %}
+                        <!-- {% if  not forloop.last %}
+                            <hr class="horizontal-line" />
+                        {% endif %} -->
 
                     {% endfor %}
                 </div>

@@ -16,7 +16,7 @@
 
 .nav-link-custom:hover::after {
     width: 100%;
-    //transition: width .3s;
+    /* transition: width .3s; */
 }
 
 .nav-link-custom:hover {

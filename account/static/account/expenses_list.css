@@ -7,7 +7,7 @@ hr {
 }
 
 .expenses-aggregate {
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -33,10 +33,12 @@ hr {
 }
 
 .expenses-aggregate-date-card {
-    background-color: #6a2c93;
+    /* background-color: #6a2c93; */
     width: 100%;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    /* border-top-left-radius: 7px;
+    border-top-right-radius: 7px; */
+    background: linear-gradient(86.19deg, rgba(157, 89, 171, 0.51) 0%, rgba(236, 96, 211, 0.53) 98.87%);
+    border-radius: 25px;
 }
 
 .expense-item{
@@ -61,10 +63,18 @@ hr {
     margin-left: 20px;
 }
 
-.plus{
+.plus {
     width: 5%;
     height: 5%;
     float: right;
     margin-right: 0%;
     margin-top: 0%;
+    font: 50pt sans-serif;
+    text-decoration: none;
+    color: #E643C9;
+}
+
+.plus:hover {
+    text-decoration: none;
+    color: #9D59AB;
 }
