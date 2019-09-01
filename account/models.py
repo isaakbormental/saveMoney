@@ -4,12 +4,15 @@ from django.utils import timezone
 import datetime
 
 
-class Bill(models.Model):
-    
-    CATEGORIES = [('Food', 'Еда'), ('Alcohool', 'Бухло'), 
+CATEGORIES = [('Food', 'Еда'), ('Alcohool', 'Бухло'), 
                     ('Rent', 'Аренда'), ('House', 'Быт'), 
                     ('Hobby', 'Хобби'), ('Education', 'Развитие'),
                     ('Fastfood', 'Фастфуд'), ('Smoking', 'Курево'), ('Transport', 'Транспорт')]
+
+
+class Bill(models.Model):
+    
+    
 
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)

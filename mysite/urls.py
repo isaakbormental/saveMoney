@@ -22,5 +22,6 @@ from api.views import BillListView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('account.urls')),
-    path('api/expenses/', BillListView.as_view())
+    path('api/', include('api.urls')),
+    path('api/expenses/', BillListView.as_view()),
 ]
