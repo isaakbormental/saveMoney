@@ -20,9 +20,6 @@ class MonthsCatsView(View):
     Get categores summary for a month
     """
     def get(self, request, **kwargs):
-        bills = Bill.objects.filter()
-        # aggregate = Aggregator.aggregate_expenses_by_date(bills)
         bills = Bill.objects.values('category').annotate(y=Sum('summa'))
-        # context = {'day_aggregates': aggregate}
         bills = [{'label': obj['category'], 'y': obj['y']} for obj in list(bills)]
         return HttpResponse(json.dumps(list(bills)))
