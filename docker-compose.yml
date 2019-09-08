@@ -1,0 +1,15 @@
+version: "3"
+services:
+  db:
+    container_name: db
+    build:
+      context: ./backend/db
+      dockerfile: Dockerfile
+    expose:
+      - 5432
+  backend:
+    container_name: backend
+    expose: 
+      - 80
+    volumes:
+      - ./backend:/backend
